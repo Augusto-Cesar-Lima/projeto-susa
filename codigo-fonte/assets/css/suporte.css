@@ -1,0 +1,203 @@
+/* ── BOTÃO FLUTUANTE DE SUPORTE ── */
+.btn-suporte {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-suporte:hover {
+  background: #333;
+  transform: scale(1.08);
+}
+
+.btn-suporte:active {
+  transform: scale(0.96);
+}
+
+/* ── OVERLAY DO MODAL ── */
+.overlay-suporte {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.overlay-suporte.aberto {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── CARD DO MODAL ── */
+.modal-suporte {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 440px;
+  padding: 32px 28px 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transform: translateY(24px);
+  transition: transform 0.25s ease;
+}
+
+.overlay-suporte.aberto .modal-suporte {
+  transform: translateY(0);
+}
+
+/* ── BOTÃO FECHAR ── */
+.btn-fechar-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #777;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.15s;
+}
+
+.btn-fechar-modal:hover {
+  color: #000;
+}
+
+/* ── TÍTULO ── */
+.modal-suporte .titulo-suporte {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.modal-suporte .subtitulo-suporte {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* ── CAMPOS ── */
+.modal-suporte .campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.modal-suporte .campo label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.modal-suporte .campo input,
+.modal-suporte .campo textarea,
+.modal-suporte .campo select {
+  padding: 10px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.modal-suporte .campo input:focus,
+.modal-suporte .campo textarea:focus,
+.modal-suporte .campo select:focus {
+  border-color: #1a1a1a;
+}
+
+.modal-suporte .campo textarea {
+  min-height: 90px;
+}
+
+/* ── BOTÕES DO FORM ── */
+.botoes-suporte {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.botoes-suporte button {
+  flex: 1;
+  padding: 11px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.botoes-suporte .btn-enviar {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.botoes-suporte .btn-enviar:hover {
+  background: #333;
+}
+
+.botoes-suporte .btn-cancelar {
+  background: #eaeaea;
+  color: #333;
+}
+
+.botoes-suporte .btn-cancelar:hover {
+  background: #d5d5d5;
+}
+
+/* ── MENSAGENS ── */
+.msg-suporte {
+  font-size: 0.82rem;
+  min-height: 18px;
+  margin-top: 6px;
+}
+
+.msg-suporte.erro {
+  color: #C0392B;
+}
+
+.msg-suporte.sucesso {
+  color: #1E8449;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 520px) {
+  .modal-suporte {
+    margin: 0 12px;
+    padding: 24px 20px 20px;
+  }
+
+  .btn-suporte {
+    bottom: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,28 @@
+message: "Se você utilizar este software, por favor cite como indicado abaixo."
+title: "Sistema Unificado de Sumário de Alta (SUSA)"
+authors:
+  - given-names: Augusto César
+    family-names: Queiroz de Lima
+    affiliation: PUC Minas
+  - given-names: Bruno Savelli
+    family-names: Brandão Gomes
+    affiliation: PUC Minas
+  - given-names: Gustavo Gomes
+    family-names: Evangelista
+    affiliation: PUC Minas
+  - given-names: Nathalia Isabela
+    family-names: Gonzales Cruz
+    affiliation: PUC Minas
+  - given-names: Weslley Henrique
+    family-names: Ribeiro Cavalcante
+    affiliation: PUC Minas
+  - given-names: Viviâne De Almeida
+    family-names: Tôrres
+    name-suffix: Orientadora
+    affiliation: PUC Minas
+keywords:
+  -
+  -
+repository-code:
+version: 1.0.0
+date-released:

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SUSA-BH — Buscar Paciente</title>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/estilos.css"/>
+    <link rel="stylesheet" href="../assets/css/suporte.css"/>
+  </head>
+  <body>
+    <!-- ── BARRA LATERAL ── -->
+    <aside>
+      <div class="marca">SUSA-BH</div>
+      <div class="divisor"></div>
+      <div class="medico-titulo">DR.(a)</div>
+      <div class="medico-nome" id="sidebarNome">Nome do Médico</div>
+      <div class="medico-crm" id="sidebarCrm">10000001</div>
+      <div class="barra-lateral-rodape">
+      <div id="BtnRegistroInicial"> </div>
+        <button class="BtnNovoCadastro">Cadastrar Novo Paciente</button>
+        <button class="btn-sair" onclick="handleSair()">Sair</button>
+      </div>
+    </aside>
+
+    <!-- ── PRINCIPAL ── -->
+    <main>
+      <div class="buscar-cartao">
+        <h1 class="search-title">Buscar Paciente</h1>
+        <div class="linha-busca">
+          <div class="envoltorio-campo">
+            <input
+              type="text"
+              id="campoBusca"
+              placeholder="000.000.000-00"
+              inputmode="numeric"
+              maxlength="14"
+              autocomplete="off"
+            />
+            <span class="icone-campo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </span>
+          </div>
+          <button class="btn-buscar" onclick="handleBuscar()">Buscar CPF</button>
+        </div>
+
+        <div class="dica" id="dica">Digite o CPF no formato 000.000.000-00</div>
+        <div class="retorno" id="retorno"></div>
+      </div>
+    </main>
+    
+    <script src="../assets/js/db-load.js"></script>
+    <script src="../assets/js/busca-paciente.js"></script>
+    <script src="../assets/js/suporte.js"></script>
+  </body>
+</html>

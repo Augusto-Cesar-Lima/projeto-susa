@@ -1,0 +1,335 @@
+:root {
+  --sidebar-w: 220px;
+  --bg: #f5f5f5;
+  --sidebar-bg: #d9d9d9;
+  --white: #fff;
+  --black: #000;
+  --gray: #555;
+  --border: #d9d9d9;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font: Arial, Helvetica, sans-serif;
+  --mono: Arial, Helvetica, sans-serif;
+  --shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--black);
+    min-height: 100vh;
+}
+
+#logo{
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+#logo:hover {
+color: #c0c0c0;
+
+}
+
+
+/* ── SIDEBAR ── */
+aside {
+    width: var(--sidebar-w);
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 20px 24px;
+    z-index: 10;
+}
+
+.marca {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.divisor {
+    height: 1px;
+    background: rgba(0,0,0,0.12);
+    margin-bottom: 16px;
+}
+
+.médico-titulo {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.medico-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 4px;
+}
+
+.medico-crm {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.sidebar-rodape { margin-top: auto; }
+
+.btn-sair {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    margin-bottom: 10px;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 9px 12px;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.btn-sair:hover { opacity: 0.75; }
+
+/* oculta header antigo */
+header { display: none; }
+
+/* ── CONTEÚDO ── */
+body > h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin-left: var(--sidebar-w);
+    padding: 40px 48px 20px;
+}
+
+/* ── CABEÇALHO PACIENTE ── */
+#cabecalhoPaciente {
+    position: relative;
+    border: none !important;
+    background: var(--white);
+    border-radius: var(--radius) !important;
+    padding: 24px 28px !important;
+    margin: 0 48px 16px calc(var(--sidebar-w) + 48px);
+    box-shadow: var(--shadow);
+    display: block;
+}
+
+#cabecalhoPaciente > p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 2px;
+}
+
+#nomeCabecalhoPaciente {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+#idadeCabecalhoPaciente {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+#CPFCabecalhoPaciente, #CNSCabecalhoPaciente {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--gray);
+}
+
+#DataNascCabecalhoPaciente {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+}
+
+/* dados adicionais */
+#DadosAdicionaisPaciente {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 16px !important;
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+    display: block;
+    background: var(--bg);
+}
+
+#DadosAdicionaisPaciente p { display: block; margin-bottom: 2px; }
+#DadosAdicionaisPaciente span {
+    font-size: 14px;
+    color: var(--black);
+}
+
+/* ── SEÇÕES DO SUMÁRIO ── */
+fieldset {
+    border: none !important;
+    background: var(--white);
+    border-radius: var(--radius) !important;
+    padding: 22px 26px !important;
+    margin: 0 48px 16px calc(var(--sidebar-w) + 48px);
+    box-shadow: var(--shadow);
+    display: block;
+}
+
+/* fieldset dentro de fieldset não tem card */
+fieldset fieldset {
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 16px !important;
+    margin: 12px 0 0 0;
+}
+
+legend {
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--gray);
+    padding: 0 6px;
+    background: var(--white);
+    margin-bottom: 14px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+fieldset fieldset legend {
+    background: transparent;
+}
+
+fieldset p {
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.7;
+    margin-bottom: 6px;
+}
+
+fieldset p span {
+    font-size: 16px;
+    color: var(--black);
+    font-weight: 500;
+}
+
+/* labels de campo dentro de p */
+fieldset p > span:first-child {
+    color: var(--gray);
+    font-weight: 400;
+}
+
+/* ── SECTIONS wrapper ── */
+#ProcedimentosPreenchimentoSct,
+#AlergiasSct,
+#MedicamentosSct {
+    margin: 0 48px 16px calc(var(--sidebar-w) + 48px);
+}
+
+#ProcedimentosPreenchimentoSct fieldset,
+#AlergiasSct fieldset,
+#MedicamentosSct fieldset {
+    margin: 0;
+}
+
+/* ── BOTÕES EDITAR/SALVAR ── */
+#ProcedimentosPreenchimentoFld button,
+#AlergiasFld button,
+#MedicamentosFld button,
+#statusAtendimentoPreenchimento button {
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 7px 14px;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    display: inline-block;
+}
+
+#ProcedimentosPreenchimentoFld button:hover,
+#AlergiasFld button:hover,
+#MedicamentosFld button:hover,
+#statusAtendimentoPreenchimento button:hover { opacity: 0.75; }
+
+/* inputs inline de edição */
+#inputProcedimento, #inputAlergias, #inputMedicamentos {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font);
+    font-size: 14px;
+    margin-bottom: 6px;
+    outline: none;
+    display: block;
+    transition: border-color 0.15s;
+    color: var(--black);
+    background: var(--white);
+}
+
+#inputProcedimento:focus,
+#inputAlergias:focus,
+#inputMedicamentos:focus {
+    border-color: var(--black);
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+    height: 60px;
+}
+
+/* ── STATUS DO ATENDIMENTO ── */
+#statusAtendimentoPreenchimento {
+    display: block !important;
+}
+
+#statusAtendimentoPreenchimento label {
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+#statusAtendimentoPreenchimento input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--black);
+}
+
+#MotivoSaidaPreenchimento { margin-top: 14px; }
+
+#MotivoSaidaListaPreenchimento {
+    padding: 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font);
+    font-size: 14px;
+    background: var(--white);
+    cursor: pointer;
+    min-width: 220px;
+    outline: none;
+    color: var(--black);
+    transition: border-color 0.15s;
+}
+
+#MotivoSaidaListaPreenchimento:focus {
+    border-color: var(--black);
+}

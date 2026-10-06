@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUSA-BH | Login</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="logo">SUSA-BH</h1>
+      <p class="subtitulo">Sistema Unificado de Sumário de Alta</p>
+      <!-- INÍCIO: Formulário de Login -->
+      <div class="card" data-form="login">
+        <form id="form-login">
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com" />
+          </div>
+
+          <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Sua senha" />
+          </div>
+
+          <div class="campo">
+            <label for="unidade">Unidade de Saúde</label>
+            <select id="unidade" name="unidade">
+              <option value="">Selecione um hospital...</option>
+
+              <optgroup label="Hospitais Públicos (FHEMIG)">
+                <option value="joao-xxiii">Hospital João XXIII</option>
+                <option value="maria-amelia-lins">
+                  Hospital Maria Amélia Lins
+                </option>
+                <option value="infantil-joao-paulo-ii">
+                  Hospital Infantil João Paulo II
+                </option>
+                <option value="alberto-cavalcanti">
+                  Hospital Alberto Cavalcanti
+                </option>
+                <option value="julia-kubitschek">
+                  Hospital Júlia Kubitschek
+                </option>
+                <option value="eduardo-de-menezes">
+                  Hospital Eduardo de Menezes
+                </option>
+                <option value="maternidade-odete-valadares">
+                  Maternidade Odete Valadares
+                </option>
+                <option value="galba-veloso">Hospital Galba Veloso</option>
+                <option value="risoleta-neves">Hospital Risoleta Neves</option>
+              </optgroup>
+
+              <optgroup label="Hospitais Municipais">
+                <option value="odilon-behrens">
+                  Hospital Municipal Odilon Behrens (HOB)
+                </option>
+              </optgroup>
+
+              <optgroup label="Hospitais Universitários">
+                <option value="hc-ufmg">Hospital das Clínicas da UFMG</option>
+                <option value="hospital-baleia">Hospital da Baleia</option>
+              </optgroup>
+
+              <optgroup label="Hospitais Filantrópicos">
+                <option value="santa-casa-bh">
+                  Santa Casa de Misericórdia de BH
+                </option>
+                <option value="hospital-evangelico">Hospital Evangélico</option>
+                <option value="paulo-de-tarso">Hospital Paulo de Tarso</option>
+                <option value="hospital-crianca">
+                  Hospital da Criança (ABC)
+                </option>
+                <option value="centro-pediatria">
+                  Centro Geral de Pediatria
+                </option>
+              </optgroup>
+
+              <optgroup label="Hospitais Privados">
+                <option value="felicio-rocho">Hospital Felício Rocho</option>
+                <option value="mater-dei-contorno">
+                  Hospital Mater Dei Contorno
+                </option>
+                <option value="mater-dei-santo-agostinho">
+                  Hospital Mater Dei Santo Agostinho
+                </option>
+                <option value="madre-teresa">Hospital Madre Teresa</option>
+                <option value="life-center">Hospital Life Center</option>
+                <option value="vera-cruz">Hospital Vera Cruz</option>
+                <option value="belo-horizonte">Hospital Belo Horizonte</option>
+                <option value="unimed-contorno">
+                  Hospital Unimed BH (Contorno)
+                </option>
+                <option value="biocor">Biocor Instituto</option>
+                <option value="socor">Hospital SOCOR</option>
+                <option value="lifecenter">Hospital Life Center</option>
+                <option value="santa-maria">Hospital Santa Maria</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <p id="erro-login" class="mensagem-erro"></p>
+
+          <button type="submit" class="btn-primario">Entrar</button>
+        </form>
+
+        <a href="#cadastro" data-btn="cadastro" class="link"
+          >Não tem conta? Cadastre-se</a
+        >
+        <a
+          href="#recuperar-senha"
+          data-btn="recuperar-senha"
+          class="link"
+          id="resetar-senha"
+          >Esqueceu sua senha?</a
+        >
+      </div>
+      <!-- FIM: Formulário de Login -->
+
+      <!-- INÍCIO: Formulário de Cadastro -->
+      <div class="card" data-form="cadastro">
+        <form id="form-cadastro">
+          <div class="campo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" placeholder="Dr. João Silva" />
+          </div>
+
+          <div class="campo">
+            <label for="crm">CRM</label>
+            <input type="text" id="crm" placeholder="CRM/MG 123456" />
+          </div>
+
+          <div class="campo">
+            <label for="email-cad">E-mail</label>
+            <input type="email" id="email-cad" placeholder="seu@email.com" />
+          </div>
+
+          <div class="campo">
+            <label for="senha-cad">Senha</label>
+            <input
+              type="password"
+              id="senha-cad"
+              placeholder="Mínimo 6 caracteres"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="confirma-senha">Confirmar senha</label>
+            <input
+              type="password"
+              id="confirma-senha"
+              placeholder="Repita a senha"
+            />
+          </div>
+
+          <p id="erro-cadastro" class="mensagem-erro"></p>
+          <p id="sucesso-cadastro" class="mensagem-sucesso"></p>
+
+          <button type="submit" class="btn-primario">Cadastrar</button>
+          <a href="#login" onclick="handleCancelar();" class="btn-secundario" data-btn="cancelar"
+            >Cancelar</a>
+        </form>
+      </div>
+      <!-- FIM: Formulário de Cadastro -->
+
+      <!-- INÍCIO: Formulário de Recuperar Senha -->
+      <div class="card" data-form="recuperar-senha">
+        <form id="form-recuperar-senha">
+          <p class="instrucao">
+            Preencha seu e-mail e enviaremos um link de recuperação de senha.
+          </p>
+
+          <div class="campo">
+            <label for="email-esqueci">E-mail</label>
+            <input
+              type="email"
+              id="email-esqueci"
+              placeholder="seunome@email.com"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="novasenha">Nova senha </label>
+            <input type="password" id="novasenha" placeholder="*******" />
+          </div>
+
+          <div class="campo">
+            <label for="repetir-novasenha">Repetir Nova senha </label>
+            <input
+              type="password"
+              id="repetir-novasenha"
+              placeholder="*******"
+            />
+          </div>
+
+          <p id="erro-esqueci" class="mensagem-erro"></p>
+          <p id="sucesso-reset" class="mensagem-sucesso"></p>
+
+          <div class="botoes">
+            <button class="btn-primario" type="submit">Resetar senha</button>
+            <a href="#login" onclick="handleCancelar();" class="btn-secundario" data-btn="cancelar"
+              >Cancelar</a>
+          </div>
+        </form>
+      </div>
+      <!-- FIM: Formulário de Recuperar Senha -->
+    </div>
+    <script src="assets/js/db-load.js"></script>
+    <script src="assets/js/auth.js"></script>
+  </body>
+</html>

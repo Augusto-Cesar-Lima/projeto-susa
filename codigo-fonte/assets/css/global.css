@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --barra-lateral-fundo: #d9d9d9;
+  --barra-lateral-largura: 220px;
+  --texto-principal: #000;
+  --texto-secundario: #555;
+  --destaque: #1a1a1a;
+  --campo-borda: #c8c8c8;
+  --campo-foco: #1a1a1a;
+  --btn-fundo: #1a1a1a;
+  --btn-hover: #333;
+  --branco: #fff;
+  --fundo-pagina: #f9f9f9;
+  --transicao: 0.2s ease;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo-pagina);
+  color: var(--texto-principal);
+  display: flex;
+  min-height: 100vh;
+}
+
+
+#logo{
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+#logo:hover {
+color: #c0c0c0;
+
+}
+
+
+
+
+/* ── BARRA LATERAL ── */
+aside {
+  width: var(--barra-lateral-largura);
+  min-width: var(--barra-lateral-largura);
+  background: var(--barra-lateral-fundo);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.marca {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  color: var(--texto-principal);
+}
+
+.divisor {
+  height: 1px;
+  background: #c0c0c0;
+  margin-bottom: 16px;
+}
+
+.medico-titulo {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--texto-secundario);
+  margin-bottom: 4px;
+}
+
+.medico-nome {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto-principal);
+  margin-bottom: 4px;
+}
+
+.medico-crm {
+  font-size: 14px;
+  color: var(--texto-secundario);
+}
+
+.barra-lateral-rodape {
+  margin-top: auto;
+}
+
+.btn-sair {
+  width: 100%;
+  padding: 11px 0;
+  background: var(--btn-fundo);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background var(--transicao);
+}
+
+.btn-sair:hover {
+  background: var(--btn-hover);
+}

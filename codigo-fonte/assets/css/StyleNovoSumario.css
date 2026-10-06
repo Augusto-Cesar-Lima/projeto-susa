@@ -1,0 +1,332 @@
+:root {
+  --sidebar-w: 220px;
+  --bg: #f5f5f5;
+  --sidebar-bg: #d9d9d9;
+  --white: #fff;
+  --black: #000;
+  --gray: #555;
+  --border: #d9d9d9;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font: Arial, Helvetica, sans-serif;
+  --mono: Arial, Helvetica, sans-serif;
+  --shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--black);
+  min-height: 100vh;
+}
+
+#logo{
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+#logo:hover {
+color: #c0c0c0;
+
+}
+
+
+/* ── SIDEBAR ── */
+aside {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--sidebar-bg);
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px 24px;
+  z-index: 10;
+}
+
+.marca {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--black);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.divisor {
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+  margin-bottom: 16px;
+}
+
+.médico-titulo {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.medico-nome {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.medico-crm {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.sidebar-rodape { margin-top: auto; }
+
+.btn-sair {
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  margin-bottom: 10px;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-sair:hover { opacity: 0.75; }
+
+/* ── HEADER ── */
+header {
+  margin-left: var(--sidebar-w);
+  padding: 32px 48px 0;
+  background: transparent;
+}
+
+header #logo h1 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+  letter-spacing: 0.2px;
+  margin-bottom: 4px;
+}
+
+header #logo h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.3px;
+}
+
+header #logo h2 #tituloPaciente {
+  text-transform: uppercase;
+}
+
+/* ── CONTEÚDO PRINCIPAL ── */
+form {
+  margin-left: var(--sidebar-w);
+  padding: 24px 48px 48px;
+  display: block;
+}
+
+/* ── CABEÇALHO DO PACIENTE (dados fixos) ── */
+#DadosPaciente {
+  border: none !important;
+  background: var(--white);
+  border-radius: var(--radius) !important;
+  padding: 22px 26px !important;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+#DadosPaciente legend {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gray);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+  display: block;
+  width: 100%;
+  background: transparent;
+}
+
+/* divs de dados do paciente — exibição, não formulário */
+#DadosPaciente > div {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 4px;
+  display: block;
+}
+
+#DadosPaciente > div span {
+  font-size: 14px;
+  color: var(--black);
+  font-weight: 500;
+}
+
+/* endereço e contatos */
+#Endereco, #Contatos {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+#Endereco span, #Contatos span {
+  font-size: 14px;
+  color: var(--black);
+}
+
+#Contatos p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 2px;
+}
+
+/* ── FIELDSETS DE FORMULÁRIO ── */
+#DadosNovoSumario {
+  border: none !important;
+  background: var(--white);
+  border-radius: var(--radius) !important;
+  padding: 24px 26px !important;
+  box-shadow: var(--shadow);
+}
+
+fieldset {
+  border: none !important;
+  background: var(--white);
+  border-radius: var(--radius) !important;
+  padding: 24px 26px !important;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+/* fieldsets aninhados */
+fieldset fieldset {
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 18px !important;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+legend {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gray);
+  padding: 8px 0;
+  background: var(--white);
+  margin-bottom: 14px;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+}
+
+fieldset fieldset legend {
+  background: transparent;
+}
+
+/* ── CAMPOS DE FORMULÁRIO ── */
+div {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label, Label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  letter-spacing: 0.2px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="datetime-local"],
+select {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 16px;
+  background: var(--white);
+  color: var(--black);
+  outline: none;
+  max-width: 400px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus, select:focus {
+  border-color: var(--black);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+input[type="radio"] {
+  width: auto;
+  margin-right: 6px;
+  accent-color: var(--black);
+}
+
+/* radio buttons em linha */
+div:has(input[type="radio"]) {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+div:has(input[type="radio"]) input[type="radio"] {
+  width: auto;
+  margin-right: 4px;
+}
+
+small {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 2px;
+}
+
+/* ── FIELDSET MOTIVO DE SAÍDA ── */
+#SaidaMotivo {
+  background: var(--white);
+  border-radius: var(--radius) !important;
+  padding: 22px 26px !important;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+/* ── BOTÃO CRIAR ── */
+#BtnNovoSumario {
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 32px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  letter-spacing: 0.2px;
+}
+
+#BtnNovoSumario:hover { opacity: 0.75; }

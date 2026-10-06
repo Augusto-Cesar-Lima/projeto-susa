@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumário</title>
+  <link rel="stylesheet" href="../assets/css/StyleSumario.css" />
+  <link rel="stylesheet" href="../assets/css/suporte.css" />
+  <link rel="stylesheet" href="../assets/css/anotacoes.css" />
+  <style>
+    .btn-print {
+      position: fixed;
+      top: 30px;
+      right: 40px;
+      z-index: 9999;
+
+      background-color: #333;
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-print:hover {
+      background-color: #555;
+    }
+
+    @media print {
+      .btn-print {
+        display: none !important;
+      }
+    }
+  </style>
+  <script src="../assets/js/db-load.js"></script>
+</head>
+
+<body>
+  <aside>
+    <div class="marca" id="logo">SUSA-BH</div>
+    <div class="divisor"></div>
+    <div class="médico-titulo">Dr.(a)</div>
+    <div class="medico-nome" id="sidebarNome">Nome do Médico</div>
+    <div class="medico-crm" id="sidebarCrm">10000001</div>
+    <div class="sidebar-rodape">
+      <div id="criacaoSumarioBtn"></div>
+
+      <button class="btn-sair" onclick="goToBusca()">Voltar</button>
+      <button class="btn-sair" onclick="handleSair()">Sair</button>
+    </div>
+  </aside>
+
+  <header>
+    <div id="logo">
+      <h1>SUSA - Sistema Unificado de Sumário de Alta</h1>
+    </div>
+  </header>
+
+  <h1 id="pacienteTxtCabecalho">PACIENTE</h1>
+
+  <button class="btn-print" onclick="window.print()" title="Imprimir Sumário">
+    🖨️
+  </button>
+
+  <fieldset id="cabecalhoPaciente">
+    <p>
+      <span id="nomeCabecalhoPaciente"> </span>
+      /
+      <span id="idadeCabecalhoPaciente"> </span>
+      anos
+    </p>
+
+    <p>
+      CPF:
+      <span id="CPFCabecalhoPaciente"> </span>
+      / CNS:
+      <span id="CNSCabecalhoPaciente"> </span>
+    </p>
+
+    <p>
+      Data de Nascimento:
+      <span id="DataNascCabecalhoPaciente"></span>
+    </p>
+    <fieldset id="DadosAdicionaisPaciente">
+      <p>
+        Nome Social:
+        <span id="NomeSocialPreenchimento"> </span>
+      </p>
+
+      <p>
+        Sexo:
+        <span id="SexoPreenchimento"> </span>
+      </p>
+
+      <p>Endereço:</p>
+      <span>Rua: </span>
+      <span id="RuaPreenchimento"> </span>
+
+      <span>Nº: </span>
+      <span id="NumeroCasaPreenchimento"> </span>
+
+      <span>Complemento: </span>
+      <span id="ComplementoPreenchimento"> </span>
+
+      <span>Bairro: </span>
+      <span id="BairroPreenchimento"> </span>
+
+      <span>Cidade: </span>
+      <span id="CidadePreenchimento"></span>
+
+      <span>Estado: </span>
+      <span id="EstadoPreenchimento"> </span>
+
+      <p>Contatos:</p>
+      <p>Telefone: <span id="Telefone1Preenchimento"> </span></p>
+      <p>Telefone Secundário: <span id="Telefone2Preenchimento"></span></p>
+      <p>Email: <span id="EmailPreenchimento"> </span></p>
+      <p>
+        Tipo Sanguíneo:
+        <span id="TpSanguineoPreenchimento"> </span>
+      </p>
+    </fieldset>
+  </fieldset>
+
+  <fieldset id="Diagnósticos">
+    <legend>Diagnósticos:</legend>
+    <p>
+      Prontuário:
+      <span id="ProntuarioPreenchimento"> </span>
+      <span>Unidade de internação: </span>
+      <span id="UnidadeInternacaoPreenchimento"> </span>
+      <span>Procedência: </span>
+      <span id="ProcedenciaPreenchimento"> </span>
+    </p>
+    <p>
+      Motivo do atendimento:
+      <span id="PreenchimentoMotivo"> </span>
+    </p>
+    <p>
+      Data e hora de entrada:
+      <span id="DataHoraAdmPreenchimento"> </span>
+    </p>
+    <p>
+      Diagnóstico de Admissão:
+      <span id="DiagnosticoAdmPreenchimento"> </span>
+      <span> CID: </span>
+      <span id="CIDAdmissaoPreenchimento"> </span>
+      <span> Presença da doença: </span>
+      <span id="PresencaPreenchimento"> </span>
+    </p>
+
+    <p>
+      Comorbidades:
+      <span id="ComorbidadesPreenchimento"> </span>
+      <span> CID: </span>
+      <span id="CIDComorbidadePreenchimento"> </span>
+    </p>
+    <p>
+      Data e Hora da Alta:
+      <span id="DataHoraAltaPreenchimento"> </span>
+    </p>
+    <p>
+      Diagnóstico Final:
+      <span id="DiagnosticoFinalPreenchimento"> </span>
+      <span>CID: </span>
+      <span id="CIDdiagnosticoFinalPreenchimento"> </span>
+    </p>
+  </fieldset>
+
+  <section id="ProcedimentosPreenchimentoSct">
+    <fieldset id="ProcedimentosPreenchimentoFld">
+      <legend>Procedimentos:</legend>
+      <span id="ProcedimentosPreenchimento"> </span>
+    </fieldset>
+  </section>
+
+  <section id="AlergiasSct">
+    <fieldset id="AlergiasFld">
+      <legend>Alergias:</legend>
+      <span id="AlergiaPreenchimento"> </span>
+    </fieldset>
+  </section>
+
+  <section id="MedicamentosSct">
+    <fieldset id="MedicamentosFld">
+      <legend>Medicamentos:</legend>
+      <span id="MedicamentosLista">
+        <link rel="stylesheet" href="StyleSumario.css" />
+      </span>
+    </fieldset>
+  </section>
+
+  <fieldset id="MedicoResponsável">
+    <legend>Medico responsável:</legend>
+    <p>
+      <span>Nome: </span>
+      <span id="NomeMedicoPreenchimento"> </span>
+      <span>CRM: </span>
+      <span id="CRMPreenchimento"> </span>
+    </p>
+    <p>
+      <span> Especialidade: </span>
+      <span id="EspecialidadePreenchimento"> </span>
+      <span>RQE: </span>
+      <span id="RQEPreenchimento"> </span>
+    </p>
+  </fieldset>
+
+  <fieldset id="statusAtendimentoPreenchimento">
+    <legend>Motivo da Saida</legend>
+
+
+    <div id="MotivoSaidaPreenchimento">
+
+      <span id="saidaPreenchimento"> </span>
+
+
+
+
+
+
+      <!-- 
+        <select id="MotivoSaidaListaPreenchimento" required> 
+          <option value="" disabled selected> <placeholder>Selecione o motivo da saida </placeholder>
+            
+          </option>
+          <option value="alta">Alta</option>
+          <option value="transferencia">Transferência</option>
+          <option value="obito">Óbito</option>
+          <option value="abandono">Abandono de tratamento</option>
+        </select>
+        -->
+    </div>
+  </fieldset>
+
+  <script src="../assets/js/db-load.js"></script>
+  <script src="../assets/js/PreenchimentoSumario.js"></script>
+  <script src="../assets/js/suporte.js"></script>
+</body>
+
+</html>

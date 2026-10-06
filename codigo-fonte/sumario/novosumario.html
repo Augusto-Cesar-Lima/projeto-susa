@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Novo Sumário</title>
+  <link rel="stylesheet" href="../assets/css/StyleNovoSumario.css">
+  <link rel="stylesheet" href="../assets/css/suporte.css">
+</head>
+<body>
+  <aside>
+    <div class="marca" id="logo">SUSA-BH</div>
+    <div class="divisor"></div>
+    <div class="médico-titulo">Dr.(a)</div>
+    <div class="medico-nome" id="sidebarNome">Nome do Médico</div>
+    <div class="medico-crm" id="sidebarCrm">10000001</div>
+    <div class="sidebar-rodape">
+      <div id="criacaoSumarioBtn"></div>
+      
+      <button class="btn-sair" onclick="goToBusca()">Voltar</button>
+      <button class="btn-sair" onclick="handleSair()">Sair</button>
+    </div>
+  </aside>
+  
+  <header>
+    
+    <div id="logo">
+      <h1> SUSA - Sistema Unificado de Sumário de Alta </h1>
+      
+      <h2> Novo Sumário de alta | Paciente: <span id="tituloPaciente"> </span> </h2>
+      
+    </div>
+  </header>
+  
+  
+  <form id="DadosNovoSumario">
+    <fieldset id="DadosPaciente">
+      <legend> Dados do Paciente </legend>
+      <div id="NomePaciente">
+        Nome:
+        <span id="PreenchimentoNome"> </span>
+      </div>
+      
+      <div id="NomeSocialPaciente">
+        Nome Social:
+        <span id="PreenchimentoNomeSocial"> </span>
+      </div>
+      
+      <div id="CPFPaciente">
+        CPF:
+        <span id="CPFPreenchimento"> </span>
+        
+        
+      </div>
+      
+      <div id="CNSPaciente">
+        CNS:
+        <span id="CNSPreenchimento"> </span>
+        
+      </div>
+      
+      <div id="DataNascimento">
+        Data de Nascimento:
+        <span id="DataNascimentoPreenchimento"> </span>
+        
+      </div>
+      
+      <div id="Sexo">
+        Sexo:
+        <span id="SexoPreenchimento"> </span>
+        
+      </div>
+      
+      <div id="TipoSanguineo">
+        Tipo Sanguineo:
+        <span id="TpSanguineoPreenchimento"> </span>
+        
+      </div>
+      
+      <div id="Endereco">
+        <p>
+          Endereço:
+        </p>
+        
+        <span> Rua: </span>
+        <span id="Rua"> </span>
+        <span>Número: </span>
+        <span id="NumeroCasa"> </span>
+        <span>Complemento: </span>
+        <span id="Complemento"> </span>
+        <span>Bairro: </span>
+        <span id="Bairro"> </span>
+        <span>Cidade: </span>
+        <span id="Cidade"> </span>
+        <span>Estado: </span>
+        <span id="Estado"> </span>
+        
+        
+      </div>
+      
+      <div id="Contatos">
+        <p>Contatos</p>
+        <p> Telefone: <span id="Telefone1"></span><br>Telefone Secundario: <span id="Telefone2"></span>
+          <br>Email: <span id="email"> </span>
+        </p>
+        
+      </div>
+    </fieldset>
+    
+    <fieldset id="DadosNovoSumario">
+      <legend> Acompanhamento Clínico </legend>
+      <div id="Prontuario">
+        <label for="ProntuarioTxt">Prontuário: </label>
+        <input type="text" id="ProntuarioTxt" required maxlength="20" required>
+      </div>
+      
+      <div>
+        <label for="DataHoraAdmissao"> Data e Hora da Admissão: </label>
+        <input type="datetime-local" id="DataHoraAdmissao" placeholder="Insira a data e a hora da admissão"
+        required>
+      </div>
+      
+      <div>
+        <label for="DataHoraAlta"> Data e Hora da Alta: </label>
+        <input type="datetime-local" id="DataHoraAlta" placeholder="Insira a data e a hora da admissão">
+      </div>
+      
+      <div>
+        <label for="unidadeInternacao"> Unidade de Internação </label>
+        <input type="text" id="unidadeInternacao" maxlength="40" required>
+      </div>
+      
+      <div>
+        <label for="procedencia">Procedência: </label>
+        <select id="procedencia" required>
+          <option disabled selected> Selecione a procedencia do atendimento </option>
+          <option> Busca direta </option>
+          <option> Urgência/Emergência </option>
+          <option> Encaminhamento ambulatorial </option>
+          <option> Transferência de outra unidade hospitalar </option>
+          <option> Outros </option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="CaraterInternacao"> Caráter da Internação: </label>
+        <label for="Agendamento">Agendada</label>
+        <input type="radio" name="CaraterInternacao" id="Agendamento" value="Agendamento" required>
+        <label for="Emergencia"> Emergência </label>
+        <input type="radio" name="CaraterInternacao" id="Emergencia" value="Emergencia">
+      </div>
+      
+      
+      <p> </p><legend> Dados do Profissional da Saúde </legend> 
+      
+      <div>
+        <label for="NomeMedico"> Nome: </label>
+        <input type="text" id="NomeMedico" required maxlength="30">
+      </div>
+      
+      <div>
+        <label for="CRMCodigo"> Codigo CRM </label>
+        <input type="text" id="CRMCodigo" required minlength="6" maxlength="6" placeholder="000000">
+        
+        <select id="CRMEstado" required>
+          <option value="" selected disable> Selecione a UF </option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="EspecialidadeMedico"> Especialidade: </label>
+        <select id="EspecialidadeMedico">
+          <option value="" selected disabled> Selecione uma especialidade </option>
+          
+        </select>
+      </div>
+      <div>
+        <Label for="RQECodigo"> RQE: </Label>
+        <input type="text" id="RQECodigo" required maxlength="10">
+      </div>
+      
+      <p> </p>
+      
+      
+      <div id="Diagnosticos">
+        <Legend> Diagnósticos </Legend>
+        <div>
+          <label for="MotivoAtendimento">Motivo do atendimento: </label>
+          <input type="text" id="MotivoAtendimento" required maxlength="120"
+          placeholder="Insira as queixas iniciais do paciente">
+        </div>
+        
+        <div>
+          <label for="DiagnosticoAdmissao"> Diagnóstico de Admissão: </label>
+          <input type="text" id="DiagnosticoAdmissao" required maxlength="50">
+          <label for="CIDadmissao">CID admissão: </label>
+          <input type="text" id="CIDadmissao" required maxlength="4" minlength="3">
+          <div>
+            <label for="IndicadorPresenca"> Presença da doença: </label>
+            <input type="radio" name="IndicadorPresenca" id="AquisicaoExt" value="AquisicaoExterna"
+            required>
+            <label for="AquisicaoExt">Paciente ingressou na unidade com a doença. </label>
+            
+            <input type="radio" name="IndicadorPresenca" id="AquisicaoLoc" value="AquisicaoLocal" required>
+            <label for="AquisicaoLoc">Paciente adquiriu a doença na unidade hospitalar. </label>
+          </div>
+        </div>
+        
+        <div>
+          <label for="Comorbidades"> Comorbidades: </label>
+          <input type="text" id="Comorbidades" maxlength="120">
+          <label for="CIDComorbidade">CID comorbidades: </label>
+          <input type="text" id="CIDComorbidade" maxlength="4" minlength="3">
+        </div>
+        
+        <div>
+          <label for="DiagnosticoFinal"> Diagnostico Final: </label>
+          <input type="text" id="DiagnosticoFinal" required maxlength="120">
+          <label for="CIDalta"> CID Alta: </label>
+          <input type="text" id="CIDalta" required maxlength="4" min="3">
+        </div>
+        
+        
+      </div>
+      <div id="Procedimentos"> <legend> Procedimentos </legend>
+        <input type="text" id="procedimentos" required>
+        
+        
+      </div>
+      <div id="alergias"> <legend> Alergias </legend>
+        <input type="text" id="AlergiasPaciente">
+        
+      </div>
+      <div id="Medicamentos"> <legend> Medicamentos Prescritos </legend>
+        <input type="text" id="MedicamentosPrescritos">
+        
+        
+        
+      </fieldset>
+      
+      <fieldset id="SaidaMotivo">
+        <legend> Motivo da saída </legend>
+        <select id="MotivoSaidaLista" required>
+          <option value="" disabled selected> Selecione o motivo de saida do paciente: </option>
+          <option value="alta"> Alta </option>
+          <option value="transferencia"> Transferência </option>
+          <option value="obito"> Óbito </option>
+          <option value="abandono">Abandono de tratamento </option>
+          
+        </select>
+        
+        
+        <button type="submit" id="BtnNovoSumario"> Criar </button>
+      </form>
+      
+      
+      
+    </fieldset>
+  </forms>
+  
+  
+  <script src="../assets/js/db-load.js"></script>
+  <script src="../assets/js/novosumario.js"> </script>
+  <script src="../assets/js/suporte.js"></script>
+</body>
+
+</html>

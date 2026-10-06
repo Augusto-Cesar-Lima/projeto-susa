@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> perfilPaciente </title>
+   <link rel="stylesheet" href="StylePerfil.css"> </head>
+
+<body>
+
+
+   <aside>
+      <div class="marca">SUSA-BH</div>
+      <div class="divisor"></div>
+      <div class="médico-titulo">Dr.(a)</div>
+      <div class="medico-nome" id="sidebarNome">Nome do Médico</div>
+      <div class="medico-crm" id="sidebarCrm">10000001</div>
+      <div class="sidebar-rodape">
+      <div id="criacaoSumarioBtn"></div>
+      <div id="BtnRegistroInicial"> </div>
+      
+      <button class="btn-sair" onclick="handleSair()">Sair</button>
+      </div>
+   </aside>
+
+
+
+   <header>
+      <div id="logo">
+         <h1> SUSA - Sistema Unificado de Sumário de Alta </h1>
+
+      </div>
+
+      
+
+
+
+      </div>
+
+
+   </header>
+   <main>
+      <h1 id="pacienteTxtCabecalho"> PACIENTE </h1>
+      <fieldset id="cabecalhoPaciente">
+         <p>
+            <span id="nomeCabecalhoPaciente">
+
+            </span>
+
+            / <span id="idadeCabecalhoPaciente">
+            
+            </span>
+            
+         </p>
+         <br> 
+         <p id="CPFCNSCabecalho">
+            CPF: <span id="CPFCabecalhoPaciente">
+
+            </span>
+            /CNS:
+            <span id="CNSCabecalhoPaciente">
+
+
+            </span>
+
+         </p>
+
+         <p id="DataNascTxt"> Data de Nascimento:
+            <span id="DataNascCabecalhoPaciente"></span>
+
+         </p>
+
+
+
+
+      </fieldset>
+
+      <section id="ListaSumarios">
+
+
+      </section>
+   </main>
+
+
+   <script src="RefPerfil.js"> </script>
+
+</body>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>perfilPaciente</title>
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/StylePerfil.css" />
+  <link rel="stylesheet" href="../assets/css/suporte.css" />
+</head>
+
+<body>
+  <aside>
+    <div class="marca" id="logo">SUSA-BH</div>
+    <div class="divisor"></div>
+    <div class="medico-titulo">DR.(a)</div>
+    <div class="medico-nome" id="sidebarNome">Nome do Médico</div>
+    <div class="medico-crm" id="sidebarCrm">10000001</div>
+    <div class="barra-lateral-rodape">
+      <div id="BtnRegistroInicial">
+        <button class="criacaoSumarioBtn">Novo Sumário</button>
+        <!--   <button class="BtnNovoCadastro">Cadastrar Novo Paciente</button>  -->
+        <button class="criacaoSumarioBtn" onclick="triggerUploadPDF()">Importar PDF</button>
+        <input type="file" id="inputPDF" accept="application/pdf" style="display:none" onchange="handlePDFUpload(event)" />
+
+        <!-- Modal de data -->
+        <div id="modalData" style="display:none">
+          <div class="modal-overlay" onclick="fecharModal()"></div>
+          <div class="modal-box">
+            <p class="modal-titulo">Data de internação</p>
+            <input type="text" id="inputData" class="modal-input" placeholder="dd-mm-aa" maxlength="8" />
+            <div class="modal-acoes">
+              <button class="modal-btn-confirmar" onclick="confirmarUpload()">Confirmar</button>
+              <button class="modal-btn-cancelar" onclick="fecharModal()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn-sair" onclick="goToBusca()">Voltar</button>
+        <button class="btn-sair" onclick="handleSair()">Sair</button>
+      </div>
+    </div>
+  </aside>
+
+  <header>
+    <div id="logo">
+      <h1>SUSA - Sistema Unificado de Sumário de Alta</h1>
+    </div>
+  </header>
+  <main>
+    <h1 id="pacienteTxtCabecalho">PACIENTE</h1>
+    <fieldset id="cabecalhoPaciente">
+      <p>
+        <span id="nomeCabecalhoPaciente"> </span>
+        / <span id="idadeCabecalhoPaciente"> </span>
+      </p>
+      <br />
+      <p id="CPFCNSCabecalho">
+        CPF: <span id="CPFCabecalhoPaciente"> </span>
+        / CNS:
+        <span id="CNSCabecalhoPaciente"> </span>
+      </p>
+
+      <p id="DataNascTxt">
+        Data de Nascimento:
+        <span id="DataNascCabecalhoPaciente"></span>
+      </p>
+    </fieldset>
+
+    <section id="ListaSumarios"></section>
+  </main>
+
+  <script src="../assets/js/db-load.js"></script>
+  <script src="../assets/js/RefPerfil.js"></script>
+  <script src="../assets/js/suporte.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+/* ── PRINCIPAL ── */
+main {
+  margin-left: var(--barra-lateral-largura);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.buscar-cartao {
+  width: 100%;
+  max-width: 620px;
+  text-align: center;
+}
+
+.search-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 36px;
+  color: var(--texto-principal);
+}
+
+.linha-busca {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.envoltorio-campo {
+  flex: 1;
+  position: relative;
+}
+
+.envoltorio-campo input {
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid var(--campo-borda);
+  border-radius: 24px;
+  padding: 0 44px 0 20px;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: var(--texto-principal);
+  background: var(--branco);
+  outline: none;
+  transition:
+    border-color var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.envoltorio-campo input::placeholder {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.envoltorio-campo input:focus {
+  border-color: var(--campo-foco);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+.icone-campo {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none;
+}
+.BtnNovoCadastro {
+  width: 100%;
+  padding: 11px 0;
+  background: var(--btn-fundo);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background var(--transicao);
+  margin-bottom: 10px;
+}
+
+.btn-buscar {
+  height: 48px;
+  padding: 0 28px;
+  background: var(--btn-fundo);
+  color: var(--branco);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition:
+    background var(--transicao),
+    transform var(--transicao);
+}
+
+.btn-buscar:hover {
+  background: var(--btn-hover);
+}
+.btn-buscar:active {
+  transform: scale(0.97);
+}
+
+/* ── ALTERNADOR DE TIPO ── */
+.alternador-tipo {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.btn-alternador {
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--campo-borda);
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  color: var(--texto-secundario);
+  transition: all var(--transicao);
+}
+
+.btn-alternador.active {
+  background: var(--texto-principal);
+  border-color: var(--texto-principal);
+  color: var(--branco);
+}
+
+/* ── DICA ── */
+.dica {
+  margin-top: 14px;
+  font-size: 0.75rem;
+  color: #aaa;
+  letter-spacing: 0.02em;
+  min-height: 18px;
+  transition: opacity 0.2s;
+}
+
+/* ── RETORNO ── */
+.retorno {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: #f00;
+  min-height: 20px;
+}
